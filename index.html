@@ -4,101 +4,83 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zmyrna • Experimental Token</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+
     <style>
-      :root {
-        --bg1: #e3e8f0;
-        --bg2: #d6dae5;
-        --card-bg: rgba(255, 255, 255, 0.65);
-        --shadow: rgba(0, 0, 0, 0.1);
-        --accent: #0a0a0a;
-      }
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-      body {
-        font-family: "Plus Jakarta Sans", system-ui, sans-serif;
-        background: radial-gradient(120% 100% at 50% 0%, var(--bg1) 0%, var(--bg2) 100%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        color: var(--accent);
-      }
-      .card {
-        width: min(90vw, 540px);
-        padding: 4rem 3rem 3.5rem;
-        background: var(--card-bg);
-        backdrop-filter: blur(12px);
-        border-radius: 1.6rem;
-        box-shadow: 0 6px 28px var(--shadow);
-        text-align: center;
-      }
-      .logo-wrap {
-        width: 80px;
-        height: 80px;
-        margin: 0 auto 1.6rem;
-        border-radius: 50%;
-        background: #f5f6f8;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .logo-wrap img {
-        width: 40px;
-        height: 40px;
-      }
-      h1 {
-        font-size: clamp(1.9rem, 5vw, 2.4rem);
-        font-weight: 700;
-        margin-bottom: 0.8rem;
-      }
-      p.subtitle {
-        font-size: 1rem;
-        font-weight: 500;
-        line-height: 1.6;
-        max-width: 28ch;
-        margin: 0 auto 2.2rem;
-        color: #394150;
-      }
-      .label {
-        font-weight: 700;
-        margin-top: 1.2rem;
-      }
-      .mono {
-        font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
-        word-break: break-all;
-        font-size: 0.9rem;
-      }
-      a {
-        color: #1a5cfb;
-        text-decoration: none;
-      }
-      footer {
-        margin-top: 3rem;
-        font-size: 0.8rem;
-        color: #60656d;
-      }
+      /* === Base === */
+      *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+      body{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;line-height:1.6;background:#e9ecf2;color:#0a0a0a;scroll-behavior:smooth}
+      img{max-width:100%;display:block}
+      a{color:#0066ff}
+
+      /* === Hero Card === */
+      .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2rem}
+      .card{background:rgba(255,255,255,0.7);backdrop-filter:blur(8px);padding:4rem 3rem;border-radius:1.75rem;box-shadow:0 8px 40px rgba(0,0,0,0.08);text-align:center;max-width:540px;width:100%}
+      .card img.logo{width:64px;height:64px;margin:-80px auto 2rem auto;filter:drop-shadow(0 2px 6px rgba(0,0,0,.12))}
+      .card h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,3.5rem);margin-bottom:1rem}
+      .card p.lead{font-size:1.125rem;margin-bottom:2rem;color:#3a3a3a}
+      .meta{margin:1.25rem 0;font-weight:600}
+
+      /* === Story Section === */
+      .section{padding:6rem 1rem;max-width:1040px;margin-inline:auto}
+      .section h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,3rem);margin-bottom:1.5rem}
+      .section .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem}
+      .section p{margin-bottom:1rem;text-align:justify;text-indent:2em;}
+
+      .dark{background:#0a0a0a;color:#f6f6f6}
+
+      /* === Footer === */
+      footer{padding:3rem 1rem;text-align:center;font-size:.875rem;color:#5a5a5a}
     </style>
   </head>
   <body>
-    <main class="card">
-      <div class="logo-wrap">
-        <img src="https://raw.githubusercontent.com/Programming010-cpu/Zmyrna/refs/heads/main/download.svg" alt="Z logo" />
+
+    <!-- Hero / Intro -->
+    <header class="hero">
+      <div class="card">
+        <img class="logo" src="https://raw.githubusercontent.com/Programming010-cpu/Zmyrna/refs/heads/main/download.svg" alt="ZMZM logo" />
+        <h1>Zmyrna (ZMZM)</h1>
+        <p class="lead">A fixed‑supply BEP‑20 token forged for technical play & collective fun.</p>
+        <p class="meta">Contract:<br />0x711499E67066e6a5E40312E7861dF129861E03aE</p>
+        <p class="meta">Total Supply: 100 ZMZM</p>
+        <p class="meta">Contact: <a href="mailto:contact@zmyrna.eu.org">contact@zmyrna.eu.org</a></p>
       </div>
-      <h1>Zmyrna (ZMZM)</h1>
-      <p class="subtitle">
-        A fixed‑supply BEP‑20 token forged for technical play &amp; collective fun.
-      </p>
-      <p class="label">Contract:</p>
-      <p class="mono">0x711499E67066e6a5E40312E7861dF129861E03aE</p>
-      <p class="label">Total Supply:</p>
-      <p>100 ZMZM</p>
-      <p class="label">Contact:</p>
-      <p><a href="mailto:contact@zmyrna.eu.org">contact@zmyrna.eu.org</a></p>
-      <footer>© 2025 Zmyrna Lab • Built on BNB Smart Chain</footer>
-    </main>
+    </header>
+
+    <!-- Story Section -->
+    <section class="section dark" id="origin">
+      <div class="cols">
+        <div>
+          <h2>Origin Story</h2>
+          <!-- Paste excerpt of story -->
+          <p>高二上，十二月前。严格来说这个时期是我蕴进京四人 bang 的 heyday，对高中新环境的陌生和警惕消散无几，又分了新班和同学还没彻底相识，因此旧祺帝国时代的遗老复辟⋯⋯</p>
+          <p>“11 月 21 号晚上，我和硕京进去江滨玩，准确来说是夜骑过去，那天是周六。”——蕴</p>
+          <p>让我强行回忆五年前这个晚秋很难，我只记得那天我们很高兴。在相册里一吨苦找加上超逸症，我们四个在我家开灶煮大锅饭，买了好多泡面和可乐，在我家煮饭吃。</p>
+        </div>
+        <div>
+          <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=900&q=80" alt="New‑Yorker style illustration placeholder" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Epilogue Section -->
+    <section class="section" id="epilogue">
+      <div class="cols">
+        <div>
+          <img src="https://images.unsplash.com/photo-1520523839891-75d3f43aded7?auto=format&fit=crop&w=900&q=80" alt="Evening city walk" />
+        </div>
+        <div>
+          <h2>City Walk Reveries</h2>
+          <p>这时期我常独自出门瞎溜达，用时兴话叫 citywalk，去在福州这么多年从未去过也没理由去的角落，钻到一个个深巷暗室又复归；阅读，哲学历史文学天文物理医学，每天睁眼就是知乎、小说；观影，怎么文艺怎么来，怎么小众怎么看⋯⋯</p>
+          <p>“那种下午没有重量，带点迷惘奔向夕阳。”<br/>—— <em>Zmyrna Chronicles</em></p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © 2025 Zmyrna Lab • Built on BNB Smart Chain
+    </footer>
   </body>
 </html>
