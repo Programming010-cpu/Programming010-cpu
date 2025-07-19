@@ -6,81 +6,86 @@
     <title>Zmyrna • Experimental Token</title>
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Playfair+Display:wght@700&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet" />
 
     <style>
-      /* === Base === */
-      *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-      body{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;line-height:1.6;background:#e9ecf2;color:#0a0a0a;scroll-behavior:smooth}
-      img{max-width:100%;display:block}
-      a{color:#0066ff}
+      :root {
+        --bg: #0d121f;
+        --ink: #f0f4f9;
+        --accent: #eae6df;
+      }
+      * {box-sizing: border-box; margin: 0; padding: 0;}
+      html,body{background:var(--bg);color:var(--ink);font-family:'Source Serif Pro',serif;line-height:1.6;scroll-behavior:smooth;}
+      img{display:block;max-width:100%;height:auto;border-radius:8px}
 
-      /* === Hero Card === */
-      .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2rem}
-      .card{background:rgba(255,255,255,0.7);backdrop-filter:blur(8px);padding:4rem 3rem;border-radius:1.75rem;box-shadow:0 8px 40px rgba(0,0,0,0.08);text-align:center;max-width:540px;width:100%}
-      .card img.logo{width:64px;height:64px;margin:-80px auto 2rem auto;filter:drop-shadow(0 2px 6px rgba(0,0,0,.12))}
-      .card h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,3.5rem);margin-bottom:1rem}
-      .card p.lead{font-size:1.125rem;margin-bottom:2rem;color:#3a3a3a}
-      .meta{margin:1.25rem 0;font-weight:600}
+      /* HERO */
+      .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:4rem 1.5rem;text-align:center}
+      .hero-logo{width:96px;height:96px;margin-bottom:2rem;filter:drop-shadow(0 0 8px rgba(255,255,255,.15));}
+      .hero-title{font:700 clamp(2.5rem,6vw,4.5rem) 'Playfair Display',serif;margin-bottom:1.5rem;letter-spacing:-.02em}
+      .hero-sub{font:600 1.2rem 'Plus Jakarta Sans',sans-serif;margin-bottom:2.5rem;color:var(--accent)}
+      .hero-footer{font-size:.9rem;font-family:'Plus Jakarta Sans',sans-serif;color:var(--accent);opacity:.65}
 
-      /* === Story Section === */
-      .section{padding:6rem 1rem;max-width:1040px;margin-inline:auto}
-      .section h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,3rem);margin-bottom:1.5rem}
-      .section .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem}
-      .section p{margin-bottom:1rem;text-align:justify;text-indent:2em;}
+      /* SECTION SHARED */
+      section.story{padding:6rem 0;border-top:1px solid rgba(255,255,255,.05);}
+      .wrap{max-width:1200px;margin:0 auto;padding:0 1.5rem}
+      .story-title{font:700 clamp(2rem,4vw,3.5rem) 'Playfair Display',serif;margin-bottom:2.5rem;color:var(--ink)}
+      .story-body{column-count:2;column-gap:3rem;column-width:22em;text-align:justify;font-size:1.1rem}
+      .story-body p{margin-bottom:1.2rem}
+      .story-body::first-letter{font-size:3.5rem;font-family:'Playfair Display',serif;font-weight:700;float:left;line-height:.9;margin-right:.1rem;color:var(--accent)}
+      .story-img{column-span:all;margin:2.5rem 0}
 
-      .dark{background:#0a0a0a;color:#f6f6f6}
-
-      /* === Footer === */
-      footer{padding:3rem 1rem;text-align:center;font-size:.875rem;color:#5a5a5a}
+      /* Responsive */
+      @media(max-width:850px){.story-body{column-count:1;text-align:left}}
     </style>
   </head>
   <body>
-
-    <!-- Hero / Intro -->
+    <!-- HERO -->
     <header class="hero">
-      <div class="card">
-        <img class="logo" src="https://raw.githubusercontent.com/Programming010-cpu/Zmyrna/refs/heads/main/download.svg" alt="ZMZM logo" />
-        <h1>Zmyrna (ZMZM)</h1>
-        <p class="lead">A fixed‑supply BEP‑20 token forged for technical play & collective fun.</p>
-        <p class="meta">Contract:<br />0x711499E67066e6a5E40312E7861dF129861E03aE</p>
-        <p class="meta">Total Supply: 100 ZMZM</p>
-        <p class="meta">Contact: <a href="mailto:contact@zmyrna.eu.org">contact@zmyrna.eu.org</a></p>
-      </div>
+      <img src="https://raw.githubusercontent.com/Programming010-cpu/Zmyrna/refs/heads/main/download.svg" alt="Z logo" class="hero-logo" />
+      <h1 class="hero-title">Zmyrna&nbsp;(ZMZM)</h1>
+      <p class="hero-sub">a fixed‑supply, memory‑backed BEP‑20 token—100 pieces, one night, forever.</p>
+      <p class="hero-footer">Contract • 0x7114…E03aE</p>
     </header>
 
-    <!-- Story Section -->
-    <section class="section dark" id="origin">
-      <div class="cols">
-        <div>
-          <h2>Origin Story</h2>
-          <!-- Paste excerpt of story -->
-          <p>高二上，十二月前。严格来说这个时期是我蕴进京四人 bang 的 heyday，对高中新环境的陌生和警惕消散无几，又分了新班和同学还没彻底相识，因此旧祺帝国时代的遗老复辟⋯⋯</p>
-          <p>“11 月 21 号晚上，我和硕京进去江滨玩，准确来说是夜骑过去，那天是周六。”——蕴</p>
-          <p>让我强行回忆五年前这个晚秋很难，我只记得那天我们很高兴。在相册里一吨苦找加上超逸症，我们四个在我家开灶煮大锅饭，买了好多泡面和可乐，在我家煮饭吃。</p>
-        </div>
-        <div>
-          <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=900&q=80" alt="New‑Yorker style illustration placeholder" />
+    <!-- STORY 1 -->
+    <section class="story" id="nocturne">
+      <div class="wrap">
+        <h2 class="story-title">River‑Road Nocturne</h2>
+        <div class="story-body">
+          <p>Some winters are loud enough to echo for years. It was the cusp of December when four of us—half‑grown, half‑lost—borrowed the night and rode along an unlit river road, convinced no universe existed beyond the breath misting in front of us.</p>
+          <p>Phones chimed; curfews snapped. Friends peeled away until dawn knew just how wide our loyalties had been. The shoreline is gentrified now—bikes sold, laughter archived—yet midnight wind still tastes like cola fizz and broth stolen from a single‑coil burner.</p>
+          <p class="story-img"><img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=2400&q=80" alt="River night"></p>
+          <p>ZMZM was struck like a commemorative coin against that night: a one‑hundred‑piece supply, each token a thumbnail moon we once outran. No minting beyond the first breath, no governance other than memory.</p>
+          <p>If you hold one, you hold a patch of pavement and river fog, of clandestine noodles and impossible curfews. You carry every mile we never rode back.</p>
         </div>
       </div>
     </section>
 
-    <!-- Epilogue Section -->
-    <section class="section" id="epilogue">
-      <div class="cols">
-        <div>
-          <img src="https://images.unsplash.com/photo-1520523839891-75d3f43aded7?auto=format&fit=crop&w=900&q=80" alt="Evening city walk" />
-        </div>
-        <div>
-          <h2>City Walk Reveries</h2>
-          <p>这时期我常独自出门瞎溜达，用时兴话叫 citywalk，去在福州这么多年从未去过也没理由去的角落，钻到一个个深巷暗室又复归；阅读，哲学历史文学天文物理医学，每天睁眼就是知乎、小说；观影，怎么文艺怎么来，怎么小众怎么看⋯⋯</p>
-          <p>“那种下午没有重量，带点迷惘奔向夕阳。”<br/>—— <em>Zmyrna Chronicles</em></p>
+    <!-- STORY 2 -->
+    <section class="story" id="elegy">
+      <div class="wrap">
+        <h2 class="story-title">Mountain‑Parade Elegy</h2>
+        <div class="story-body">
+          <p>We were bused to a ridge where wind cut like glass and the winter camp smelled of diesel and borrowed courage. Sixteen boys to a room, singing through cigarette haze and instant‑noodle steam. Night drills beat the hill like a drum, yet the sky—soaked in stars—seemed to forgive our noise.</p>
+          <p>On the second dawn we marched to a forgotten monument with paper flowers and pocket‑sized speakers. The cold drove music into the stone; somewhere between the anthem and the echo, we realised adulthood would not wait for summer.</p>
+          <p class="story-img"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2400&q=80" alt="Mountain camp"></p>
+          <p>That ridge lives inside ZMZM’s contract: a silent ledger line storing <em>altitude, frost, collective bravado</em>. Each transfer is a roll‑call; each wallet, a barracks lamp left on so no one feels the dark alone.</p>
         </div>
       </div>
     </section>
 
-    <footer>
-      © 2025 Zmyrna Lab • Built on BNB Smart Chain
-    </footer>
+    <!-- STORY 3 -->
+    <section class="story" id="rain">
+      <div class="wrap">
+        <h2 class="story-title">Rain‑Soaked Partings</h2>
+        <div class="story-body">
+          <p>May returned with monsoon zeal. We gathered in a borrowed flat, four keyboards humming the last cooperative game we would ever finish. Outside, rain hammered the neon; inside, someone produced lottery tickets and a theory of luck too fragile to survive daylight.</p>
+          <p>One by one parents called; buses idled; promises blurred. At a midnight street corner the city’s smallest fried‑chicken shop stayed open just long enough to witness our handshake treaty: distance, but never erasure.</p>
+          <p class="story-img"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=2400&q=80" alt="Rainy city"></p>
+          <p>Today those coordinates resolve to a hash in the ZMZM ledger—<em>an address where thunder and farewell compress into sixteen bytes.</em> Transfer the token and you forward the stormcloud, the static, the impossible hoax of forever friends.</p>
+        </div>
+      </div>
+    </section>
+
   </body>
 </html>
