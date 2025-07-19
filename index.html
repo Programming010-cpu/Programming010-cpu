@@ -3,84 +3,107 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zmyrna • Experimental BEP‑20 Token</title>
+    <title>Zmyrna • Experimental Token</title>
 
-    <!-- 𝟙 Google Fonts → Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
 
     <style>
-      /* 🌈 Global Reset */
-      *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-      html{scroll-behavior:smooth}
-      body{font-family:'Inter',system-ui,Arial,sans-serif;line-height:1.6;color:#111;background:linear-gradient(125deg,#f8fafc 0%,#eef2ff 100%) no-repeat fixed;height:100%;}
-      a{color:#2563eb;text-decoration:none}a:hover{opacity:.8}
-
-      /* 🔖 Utility */
-      .container{max-width:860px;margin-inline:auto;padding:2.5rem 1.25rem}
-      .card{background:#fff;border-radius:1.25rem;box-shadow:0 8px 24px rgba(0,0,0,.05);padding:3rem 2.5rem}
-      .flex{display:flex;align-items:center;gap:.75rem}
-      .btn{display:inline-block;background:#2563eb;color:#fff;font-weight:500;padding:.65rem 1.4rem;border-radius:.75rem;transition:background .2s}
-      .btn:hover{background:#1d4ed8}
-      .tag{padding:.25rem .55rem;border-radius:.5rem;font-size:.75rem;font-weight:500;background:#eff6ff;color:#2563eb;border:1px solid #bfdbfe}
-      @media(min-width:640px){h1{font-size:2.75rem}}@media(max-width:639px){h1{font-size:2rem}}
+      :root {
+        --accent: #0a0a0a;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: radial-gradient(ellipse at 20% 30%, #c6d8ff 0%, #e7ecf5 40%, #f8f9fb 100%);
+        color: var(--accent);
+      }
+      /* glassmorphism card */
+      .card {
+        background: rgba(255, 255, 255, 0.55);
+        backdrop-filter: blur(16px) saturate(140%);
+        -webkit-backdrop-filter: blur(16px) saturate(140%);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        box-shadow: 0 4px 40px rgba(0, 0, 0, 0.12);
+        border-radius: 24px;
+        padding: 2.5rem 3rem;
+        max-width: 420px;
+        width: 90%;
+        text-align: center;
+      }
+      .logo {
+        width: 72px;
+        height: 72px;
+        margin: 0 auto 1.5rem;
+        animation: float 6s ease-in-out infinite;
+      }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-8px);
+        }
+      }
+      h1 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+        letter-spacing: -0.5px;
+      }
+      .tagline {
+        font-size: 0.95rem;
+        color: #555;
+        margin-bottom: 1.75rem;
+      }
+      .info {
+        font-size: 0.9rem;
+        line-height: 1.55;
+        margin-bottom: 1.25rem;
+        word-break: break-all;
+      }
+      a {
+        color: #0070f3;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      footer {
+        font-size: 0.75rem;
+        opacity: 0.8;
+        margin-top: 1.5rem;
+      }
     </style>
   </head>
   <body>
-    <main class="container">
-      <!-- ╭───────────────────────────────────────────╮
-           │ Header / Hero                           │
-           ╰───────────────────────────────────────────╯ -->
-      <section class="card" id="top">
-        <div class="flex" style="margin-bottom:1.5rem;">
-          <img src="https://raw.githubusercontent.com/Programming010-cpu/Zmyrna/refs/heads/main/download.svg" alt="Z logo" width="48" height="48" style="border-radius:50%;background:#f5f7fa;" />
-          <div>
-            <h1>Zmyrna (ZMZM)</h1>
-            <span class="tag">Fixed Supply • 100 Tokens</span>
-          </div>
-        </div>
-        <p style="margin-bottom:1.75rem;max-width:600px;">
-          <strong>Zmyrna</strong> is a minimalist BEP‑20 token minted on BNB Smart Chain for technical experimentation and community collecting. The contract is open‑source, immutable, and permits no further minting beyond the genesis&nbsp;100&nbsp;units.
-        </p>
-        <a class="btn" href="#contract">View Contract Info</a>
-      </section>
+    <main class="card">
+      <!-- Replace src if your logo path differs -->
+      <img src="https://raw.githubusercontent.com/Programming010-cpu/Zmyrna/refs/heads/main/download.svg" alt="ZMZM logo" class="logo" />
 
-      <!-- ╭───────────────────────────────────────────╮
-           │ Contract Details                        │
-           ╰───────────────────────────────────────────╯ -->
-      <section class="card" id="contract" style="margin-top:2.5rem;">
-        <h2 style="margin-bottom:1rem;">Contract Snapshot</h2>
-        <ul style="list-style:none;display:grid;row-gap:.75rem;">
-          <li><strong>Address:</strong> <a href="https://bscscan.com/token/0x711499E67066e6a5E40312E7861dF129861E03aE" target="_blank" rel="noopener">0x7114…03aE</a></li>
-          <li><strong>Chain ID:</strong> 56 (BNB Smart Chain Mainnet)</li>
-          <li><strong>Total Supply:</strong> 100 ZMZM</li>
-          <li><strong>Decimals:</strong> 0 (unfrangible)</li>
-          <li><strong>Source Code:</strong> <a href="https://bscscan.com/address/0x711499E67066e6a5E40312E7861dF129861E03aE#code" target="_blank" rel="noopener">Verified on BscScan</a></li>
-        </ul>
-      </section>
+      <h1>Zmyrna (ZMZM)</h1>
+      <p class="tagline">
+        A fixed‑supply BEP‑20 token forged for technical play & collective fun.
+      </p>
 
-      <!-- ╭───────────────────────────────────────────╮
-           │ How to Get & Trade                      │
-           ╰───────────────────────────────────────────╯ -->
-      <section class="card" id="trade" style="margin-top:2.5rem;">
-        <h2 style="margin-bottom:1rem;">How to Acquire ZMZM</h2>
-        <ol style="list-style:decimal inside;max-width:640px;">
-          <li>Open <a href="https://pancakeswap.finance" target="_blank" rel="noopener">PancakeSwap V2</a> and connect your BSC wallet.</li>
-          <li>Paste the contract address above to import the token.</li>
-          <li>Swap a small amount of BNB for ZMZM (slippage 0.5&nbsp;% recommended).</li>
-        </ol>
-      </section>
+      <p class="info"><strong>Contract:</strong><br />0x711499E67066e6a5E40312E7861dF129861E03aE</p>
+      <p class="info"><strong>Total Supply:</strong> 100 ZMZM</p>
+      <p class="info">
+        <strong>Contact:</strong><br /><a href="mailto:contact@zmyrna.eu.org">contact@zmyrna.eu.org</a>
+      </p>
 
-      <!-- ╭───────────────────────────────────────────╮
-           │ Contact                                │
-           ╰───────────────────────────────────────────╯ -->
-      <section class="card" id="contact" style="margin-top:2.5rem;text-align:center;">
-        <h2 style="margin-bottom:1rem;">Get in Touch</h2>
-        <p style="margin-bottom:1.25rem;">Questions or curious about the experiment? Feel free to reach out.</p>
-        <a class="btn" href="mailto:contact@zmyrna.eu.org">contact@zmyrna.eu.org</a>
-      </section>
-
-      <!-- Footer -->
-      <p style="text-align:center;margin-top:2rem;font-size:.85rem;color:#6b7280;">© 2025 Zmyrna Token • Made with&nbsp;♥ for decentralised tinkering.</p>
+      <footer>&copy; 2025 Zmyrna Lab • Built on BNB Smart Chain</footer>
     </main>
   </body>
 </html>
