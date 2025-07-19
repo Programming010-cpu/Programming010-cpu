@@ -1,14 +1,86 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8" />
-  <title>Zmyrna Token</title>
-  <style>body{font-family:sans-serif;line-height:1.6;margin:2rem auto;max-width:720px}</style>
-</head>
-<body>
-  <h1>Zmyrna (ZMZM)</h1>
-  <p>固定发行量：100 枚（不可再增发）</p>
-  <p>合约地址：0x711499E67066e6a5E40312E7861dF129861E03aE</p>
-  <p>官方邮箱：<a href="mailto:contact@zmyrna.eu.org">contact@zmyrna.eu.org</a></p>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zmyrna • Experimental BEP‑20 Token</title>
+
+    <!-- 𝟙 Google Fonts → Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+
+    <style>
+      /* 🌈 Global Reset */
+      *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+      html{scroll-behavior:smooth}
+      body{font-family:'Inter',system-ui,Arial,sans-serif;line-height:1.6;color:#111;background:linear-gradient(125deg,#f8fafc 0%,#eef2ff 100%) no-repeat fixed;height:100%;}
+      a{color:#2563eb;text-decoration:none}a:hover{opacity:.8}
+
+      /* 🔖 Utility */
+      .container{max-width:860px;margin-inline:auto;padding:2.5rem 1.25rem}
+      .card{background:#fff;border-radius:1.25rem;box-shadow:0 8px 24px rgba(0,0,0,.05);padding:3rem 2.5rem}
+      .flex{display:flex;align-items:center;gap:.75rem}
+      .btn{display:inline-block;background:#2563eb;color:#fff;font-weight:500;padding:.65rem 1.4rem;border-radius:.75rem;transition:background .2s}
+      .btn:hover{background:#1d4ed8}
+      .tag{padding:.25rem .55rem;border-radius:.5rem;font-size:.75rem;font-weight:500;background:#eff6ff;color:#2563eb;border:1px solid #bfdbfe}
+      @media(min-width:640px){h1{font-size:2.75rem}}@media(max-width:639px){h1{font-size:2rem}}
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <!-- ╭───────────────────────────────────────────╮
+           │ Header / Hero                           │
+           ╰───────────────────────────────────────────╯ -->
+      <section class="card" id="top">
+        <div class="flex" style="margin-bottom:1.5rem;">
+          <img src="logo.svg" alt="Z logo" width="48" height="48" style="border-radius:50%;background:#f5f7fa;" />
+          <div>
+            <h1>Zmyrna (ZMZM)</h1>
+            <span class="tag">Fixed Supply • 100 Tokens</span>
+          </div>
+        </div>
+        <p style="margin-bottom:1.75rem;max-width:600px;">
+          <strong>Zmyrna</strong> is a minimalist BEP‑20 token minted on BNB Smart Chain for technical experimentation and community collecting. The contract is open‑source, immutable, and permits no further minting beyond the genesis&nbsp;100&nbsp;units.
+        </p>
+        <a class="btn" href="#contract">View Contract Info</a>
+      </section>
+
+      <!-- ╭───────────────────────────────────────────╮
+           │ Contract Details                        │
+           ╰───────────────────────────────────────────╯ -->
+      <section class="card" id="contract" style="margin-top:2.5rem;">
+        <h2 style="margin-bottom:1rem;">Contract Snapshot</h2>
+        <ul style="list-style:none;display:grid;row-gap:.75rem;">
+          <li><strong>Address:</strong> <a href="https://bscscan.com/token/0x711499E67066e6a5E40312E7861dF129861E03aE" target="_blank" rel="noopener">0x7114…03aE</a></li>
+          <li><strong>Chain ID:</strong> 56 (BNB Smart Chain Mainnet)</li>
+          <li><strong>Total Supply:</strong> 100 ZMZM</li>
+          <li><strong>Decimals:</strong> 0 (unfrangible)</li>
+          <li><strong>Source Code:</strong> <a href="https://bscscan.com/address/0x711499E67066e6a5E40312E7861dF129861E03aE#code" target="_blank" rel="noopener">Verified on BscScan</a></li>
+        </ul>
+      </section>
+
+      <!-- ╭───────────────────────────────────────────╮
+           │ How to Get & Trade                      │
+           ╰───────────────────────────────────────────╯ -->
+      <section class="card" id="trade" style="margin-top:2.5rem;">
+        <h2 style="margin-bottom:1rem;">How to Acquire ZMZM</h2>
+        <ol style="list-style:decimal inside;max-width:640px;">
+          <li>Open <a href="https://pancakeswap.finance" target="_blank" rel="noopener">PancakeSwap V2</a> and connect your BSC wallet.</li>
+          <li>Paste the contract address above to import the token.</li>
+          <li>Swap a small amount of BNB for ZMZM (slippage 0.5&nbsp;% recommended).</li>
+        </ol>
+      </section>
+
+      <!-- ╭───────────────────────────────────────────╮
+           │ Contact                                │
+           ╰───────────────────────────────────────────╯ -->
+      <section class="card" id="contact" style="margin-top:2.5rem;text-align:center;">
+        <h2 style="margin-bottom:1rem;">Get in Touch</h2>
+        <p style="margin-bottom:1.25rem;">Questions or curious about the experiment? Feel free to reach out.</p>
+        <a class="btn" href="mailto:contact@zmyrna.eu.org">contact@zmyrna.eu.org</a>
+      </section>
+
+      <!-- Footer -->
+      <p style="text-align:center;margin-top:2rem;font-size:.85rem;color:#6b7280;">© 2025 Zmyrna Token • Made with&nbsp;♥ for decentralised tinkering.</p>
+    </main>
+  </body>
 </html>
