@@ -1,109 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth scroll-p-6">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zmyrna • Experimental Token</title>
-
-    <!-- Google Font -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
-
     <style>
       :root {
         --accent: #0a0a0a;
+        --bg‑radial: radial-gradient(135deg,#d8e0ff 0%,#f5f7fa 100%);
       }
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-      body {
-        font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: radial-gradient(ellipse at 20% 30%, #c6d8ff 0%, #e7ecf5 40%, #f8f9fb 100%);
-        color: var(--accent);
-      }
-      /* glassmorphism card */
-      .card {
-        background: rgba(255, 255, 255, 0.55);
-        backdrop-filter: blur(16px) saturate(140%);
-        -webkit-backdrop-filter: blur(16px) saturate(140%);
-        border: 1px solid rgba(255, 255, 255, 0.25);
-        box-shadow: 0 4px 40px rgba(0, 0, 0, 0.12);
-        border-radius: 24px;
-        padding: 2.5rem 3rem;
-        max-width: 420px;
-        width: 90%;
-        text-align: center;
-      }
-      .logo {
-        width: 72px;
-        height: 72px;
-        margin: 0 auto 1.5rem;
-        animation: float 6s ease-in-out infinite;
-      }
-      @keyframes float {
-        0%,
-        100% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-8px);
-        }
-      }
-      h1 {
-        font-size: 1.8rem;
-        font-weight: 700;
-        margin-bottom: 0.75rem;
-        letter-spacing: -0.5px;
-      }
-      .tagline {
-        font-size: 0.95rem;
-        color: #555;
-        margin-bottom: 1.75rem;
-      }
-      .info {
-        font-size: 0.9rem;
-        line-height: 1.55;
-        margin-bottom: 1.25rem;
-        word-break: break-all;
-      }
-      a {
-        color: #0070f3;
-        text-decoration: none;
-      }
-      a:hover {
-        text-decoration: underline;
-      }
-      footer {
-        font-size: 0.75rem;
-        opacity: 0.8;
-        margin-top: 1.5rem;
-      }
+      *{box-sizing:border-box;margin:0;padding:0}
+      body{font-family:'Plus Jakarta Sans',sans-serif;background:#eef1f6;color:#222;-webkit-font-smoothing:antialiased}
+      section{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:4rem 1.5rem}
+      /* ===== hero card ===== */
+      .card{background:var(--bg‑radial);box-shadow:0 20px 60px rgba(0,0,0,.08);border-radius:1.5rem;padding:3.5rem 2rem;text-align:center;width:min(90%,480px)}
+      .card-logo{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;margin:0 auto 2rem;background:#fff;box-shadow:0 4px 12px rgba(0,0,0,.05);animation:float 6s ease-in-out infinite}
+      @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+      h1{font-weight:700;font-size:clamp(1.8rem,3.5vw,2.6rem);margin-bottom:.5rem}
+      h2{font-weight:500;margin-bottom:1.25rem;font-size:1.125rem;color:#555}
+      .meta{font-weight:700;margin-top:1.5rem}
+      a{color:#0066ff;text-decoration:none}
+      a:hover{text-decoration:underline}
+      /* ===== narrative sections ===== */
+      .story{background:#fff}
+      .story-inner{max-width:880px;width:100%;margin:auto;display:grid;grid-template-columns:1fr;gap:2rem}
+      .story img{width:100%;border-radius:1rem;box-shadow:0 10px 30px rgba(0,0,0,.05)}
+      .story h3{font-size:clamp(1.5rem,3vw,2rem);font-weight:600;margin-bottom:.75rem}
+      .story p{line-height:1.7;color:#444;font-size:1rem}
+      /* ===== waterfall gallery ===== */
+      .gallery{column-count:3;column-gap:1rem;max-width:1080px;margin:auto}
+      .gallery img{width:100%;margin:0 0 1rem;border-radius:.75rem;display:block;transition:transform .3s}
+      .gallery img:hover{transform:translateY(-4px)}
+      @media(max-width:860px){.gallery{column-count:2}}
+      @media(max-width:520px){.gallery{column-count:1}}
+      footer{padding:3rem 1rem;text-align:center;font-size:.875rem;color:#666}
     </style>
   </head>
   <body>
-    <main class="card">
-      <!-- Replace src if your logo path differs -->
-      <img src="https://raw.githubusercontent.com/Programming010-cpu/Zmyrna/refs/heads/main/download.svg" alt="ZMZM logo" class="logo" />
+    <!-- Hero / Card -->
+    <section id="home">
+      <div class="card">
+        <div class="card-logo">
+          <img src="https://raw.githubusercontent.com/Programming010-cpu/Zmyrna/refs/heads/main/download.svg" alt="Z Logo" width="36" height="36" />
+        </div>
+        <h1>Zmyrna (ZMZM)</h1>
+        <h2>A fixed‑supply BEP‑20 token forged for technical play & collective fun.</h2>
+        <p class="meta">Contract:</p>
+        <p style="font-family:monospace;font-size:.9rem;word-break:break-all">0x711499E67066e6a5E40312E7861dF129861E03aE</p>
+        <p class="meta">Total Supply: 100 ZMZM</p>
+        <p class="meta" style="margin-top:1.75rem">Contact:</p>
+        <a href="mailto:contact@zmyrna.eu.org">contact@zmyrna.eu.org</a>
+      </div>
+    </section>
 
-      <h1>Zmyrna (ZMZM)</h1>
-      <p class="tagline">
-        A fixed‑supply BEP‑20 token forged for technical play & collective fun.
-      </p>
+    <!-- Story Section -->
+    <section class="story" id="origin">
+      <div class="story-inner">
+        <div>
+          <h3>Origin</h3>
+          <p>
+            Born from a late‑night coding sprint in 2025, Zmyrna was crafted as a miniature
+            sandbox to explore tokenomics at nano‑scale. With only 100 units, each
+            transfer writes a footprint onto BNB Smart Chain, reminding us that small
+            experiments lead to big ideas.
+          </p>
+        </div>
+        <img src="https://images.unsplash.com/photo-1558981033-98fb174f5813?auto=format&fit=crop&w=1200&q=60" alt="Origin" />
+      </div>
+    </section>
 
-      <p class="info"><strong>Contract:</strong><br />0x711499E67066e6a5E40312E7861dF129861E03aE</p>
-      <p class="info"><strong>Total Supply:</strong> 100 ZMZM</p>
-      <p class="info">
-        <strong>Contact:</strong><br /><a href="mailto:contact@zmyrna.eu.org">contact@zmyrna.eu.org</a>
-      </p>
+    <!-- Symbolism Section -->
+    <section class="story" style="background:#f5f7fa" id="symbolism">
+      <div class="story-inner" style="flex-direction:column-reverse">
+        <img src="https://images.unsplash.com/photo-1516239322746-94e72041c33e?auto=format&fit=crop&w=1200&q=60" alt="Meaning" />
+        <div>
+          <h3>Symbolism</h3>
+          <p>
+            The angular <strong>Z</strong> sigmoid represents a spark—two strokes converging
+            at a point of creation. It nods to Zeno’s paradox: finite supply meeting
+            infinite creativity. Owning a ZMZM is holding a pixel of a larger digital
+            canvas.
+          </p>
+        </div>
+      </div>
+    </section>
 
-      <footer>&copy; 2025 Zmyrna Lab • Built on BNB Smart Chain</footer>
-    </main>
+    <!-- Waterfall Gallery Section -->
+    <section id="gallery" style="background:#fff">
+      <div style="max-width:1080px;margin:auto;text-align:center;margin-bottom:3rem">
+        <h3 style="font-size:2rem;font-weight:600;margin-bottom:1rem">Moments on‑chain</h3>
+        <p style="color:#555">Snapshots & artwork contributed by early holders</p>
+      </div>
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1521790361543-f645cf042ec3?auto=format&fit=crop&w=400&q=60" alt="Art1" />
+        <img src="https://images.unsplash.com/photo-1581091870627-3eea9dd6e18d?auto=format&fit=crop&w=400&q=60" alt="Art2" />
+        <img src="https://images.unsplash.com/photo-1606741965171-7c337d2a5b90?auto=format&fit=crop&w=400&q=60" alt="Art3" />
+        <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=400&q=60" alt="Art4" />
+        <img src="https://images.unsplash.com/photo-1601987076572-38a4d440add7?auto=format&fit=crop&w=400&q=60" alt="Art5" />
+        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=400&q=60" alt="Art6" />
+      </div>
+    </section>
+
+    <footer>
+      © 2025 Zmyrna Lab • Built on BNB Smart Chain
+    </footer>
   </body>
+</html>
+
 </html>
