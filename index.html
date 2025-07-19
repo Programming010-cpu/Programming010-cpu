@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Zmyrna ZMZM · 100 Moments Minted</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Double:wght@100..900&display=swap" rel="stylesheet">
+
+  <style>
+  :root{
+    --glass-bg:rgba(255,255,255,.06);
+    --glass-border:rgba(255,255,255,.15);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    /* Changed font-family to Bitcount Prop Double */
+    font-family:'Bitcount Prop Double',sans-serif;
+    background:#000;color:#f3f3f3;line-height:1.9;
+    overflow-x:hidden;scroll-snap-type:y mandatory;
+  }
+  section{scroll-snap-align:start;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:4rem 1.5rem}
+  canvas#bg{position:fixed;top:0;left:0;z-index:-1}
+
+  /* ---------------- Hero Intro ---------------- */
+  .intro{background:radial-gradient(circle at 50% 0%,rgba(0,255,255,.15) 0%,rgba(0,255,255,0) 70%);text-align:center}
+  .hero{max-width:900px;display:flex;flex-direction:column;align-items:center}
+  .token-icon-large{width:180px;max-width:60vw;filter:drop-shadow(0 0 18px rgba(0,255,255,.75));margin:0 auto 2rem auto}
+  .intro h1{
+    /* This already used the correct font */
+    font-family:'Bitcount Prop Double',sans-serif;
+    font-size:8.8rem;
+    letter-spacing:.10em;
+    margin-bottom:0.1rem;
+    font-weight:400;
+  }
+  .intro p{font-size:1.5rem;margin-bottom:2.5rem;opacity:.9}
+  .contract-link{display:inline-block;padding:.9rem 1.8rem;border:1px solid #0ff;border-radius:999px;color:#0ff;font-size:1.1rem;text-decoration:none;transition:.3s}
+  .contract-link:hover{background:#0ff;color:#000}
+
+  /* ---------------- Glass Card ---------------- */
+  .card{
+    width:min(90vw,1100px);
+    background:var(--glass-bg);
+    border:1px solid var(--glass-border);
+    border-radius:32px;
+    padding:3.5rem;
+    backdrop-filter:blur(25px) saturate(180%);
+    display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;
+    opacity:0;transform:translateY(40px);
+    transition:1.2s cubic-bezier(.23,1,.32,1);
+  }
+  .card.visible{opacity:1;transform:none}
+  .card img{width:100%;border-radius:20px;box-shadow:0 0 30px rgba(255,255,255,.08)}
+  .card h2{font-size:2.8rem;font-weight:600;margin-bottom:1.5rem}
+  .card p{font-size:1.3rem;opacity:.85}
+
+  /* tech snippet */
+  .tech-snippet{
+    margin-top:2.5rem;
+    padding:1.2rem 1.5rem;
+    background:rgba(0,0,0,.4);
+    border-left:3px solid #0ff;
+    /* Removed specific font-family to inherit from body */
+    font-size:.9rem;
+    color:#0ff;
+    overflow-x:auto;
+    border-radius:0 12px 12px 0;
+    white-space:pre;
+  }
+  /* token‑icon + chart container */
+  .tokenomics{
+    display:flex;flex-direction:column;align-items:center;gap:1.5rem;
+  }
+  .token-icon{max-width:220px;width:70%;filter:drop-shadow(0 0 15px rgba(0,255,255,.6))}
+  #tokenChart{width:100%;max-width:400px;height:240px;background:linear-gradient(135deg,rgba(0,255,255,.15) 0%,rgba(0,255,255,0) 100%);border-radius:18px;backdrop-filter:blur(4px) saturate(160%);box-shadow:0 0 25px rgba(0,255,255,.2)}
+
+  /* responsive */
+  @media(max-width:768px){
+    .card{grid-template-columns:1fr;padding:2.5rem 2rem}
+    .intro h1{font-size:2.6rem}
+    .intro p{font-size:1.2rem}
+  }
+
+  /* footer */
+  footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.9rem;
+    opacity: 0.7;
+  }
+  </style>
+</head>
+<body>
+
+<canvas id="bg"></canvas>
+
+<section class="intro">
+  <div class="hero">
+    <img class="token-icon-large" src="https://raw.githubusercontent.com/Programming010-cpu/Zmyrna/refs/heads/main/download.svg" alt="ZMZM Token Icon Large">
+    <h1>ZMZM</h1>
+    <p>One hundred in view, one only for you.</p>
+    <a class="contract-link" href="https://bscscan.com/token/0x711499e67066e6a5e40312e7861df129861e03ae" target="_blank" rel="noopener">View Contract on BscScan</a>
+  </div>
+</section>
+
+<section>
+  <div class="card" data-story="1">
+    <img src="https://raw.githubusercontent.com/Programming010-cpu/Zmyrna/main/Neon%20River%20Through%20Rugged%20Nightscape.png" alt="Cyber River Night">
+    <div>
+      <h2>River‑Road Nocturne</h2>
+      <p>Some winters are loud enough to echo in bone for a decade. On the seam of December four of us—half grown, half lost—stole the night and rode an unlit river road, convinced the universe ended at the fog of our breath.</p>
+      <p>Phones dimmed like dying stars, curfews snapped. One by one friends were recalled by parents, futures, or fear. Today the shoreline has been gentrified—bicycles sold, laughter archived—yet the midnight wind still tastes of cola fizz and ramen stolen from a single‑coil burner.</p>
+      <p>ZMZM was minted against that night: one hundred pieces, never more. Each token is a thumbnail moon we once outran. Hold one and you hold a strip of asphalt, a lungful of river mist, a bowl of contraband noodles, and every mile we never rode back.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="card" data-story="2">
+    <img src="https://raw.githubusercontent.com/Programming010-cpu/Zmyrna/main/8e6971b4-eb81-46f5-91af-6b8d14e7573a.png" alt="Neon Mountain Ridge">
+    <div>
+      <h2>Mountain‑Parade Elegy</h2>
+      <p>The bus vomited diesel into the mountain air. Sixteen‑year‑olds, sardined in green uniforms, sang until the glass frosted. Night drills drummed the ridge into a vast instrument, while the star‑soaked sky forgave our noise.</p>
+      <p>At second dawn we marched to a forgotten monument—paper flowers, pocket speakers, frost on our lashes. Between anthem and echo we understood: adulthood would not wait for summer. That moment’s altitude, frost, and collective bravado were hashed into ZMZM’s immutable storage.</p>
+      <p>Each transfer is a roll‑call; each wallet a barracks lamp left on so no one faces the dark alone.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="card" data-story="3">
+    <img src="https://raw.githubusercontent.com/Programming010-cpu/Zmyrna/main/6fb2fc1c-2847-440e-bd46-c9ae874a4d11.png" alt="Pixel Rain City">
+    <div>
+      <h2>Pixel‑Rain Farewell</h2>
+      <p>May returned with monsoon appetite. We crowded a borrowed apartment, four keyboards weaving the last co‑op we would ever finish. Outside, neon dissolved into pixelated rain; inside, we debated lottery tickets and eternity as if dawn could be paused.</p>
+      <p>Parents’ calls became alarms, buses idled in alleyways. At a midnight corner the city’s smallest fried‑chicken stall kept one bulb burning to witness our treaty: distance would happen, erasure would not.</p>
+      <p>Those coordinates are now a 16‑byte hash in the ZMZM ledger. Transfer the token and you ship the thunderstorm, the static, the impossible myth of forever friends.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <div>
+      <h2>Memory‑Proof Algorithm</h2>
+      <p>To compress memory into 256 bits we engineered a zero‑knowledge proof that validates experience ownership without disclosing its substance:</p>
+      <div class="tech-snippet">// PoseidonHash(state, salt) → commitment
+// Groth16 proof: knowledge of pre‑image without disclosure
+for event in memories:
+    leaf = poseidon(timestamp, entropy, geohash)
+root = merkle_root(leaves)
+assert verify_proof(proof, root, commitment)</div>
+      <p>The chain stores only the commitment; the memories remain ours alone.</p>
+    </div>
+    <div class="tokenomics">
+      <img class="token-icon" src="https://raw.githubusercontent.com/Programming010-cpu/Zmyrna/refs/heads/main/download.svg" alt="ZMZM Token Icon">
+      <canvas id="tokenChart" width="400" height="240"></canvas>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025-2077 Zmyrna. Legal says we can’t call it magic, so we’re calling it “protocol.”</p>
+</footer>
+
+<script type="module">
+import * as THREE from 'https://unpkg.com/three@0.158.0/build/three.module.js';
+const scene = new THREE.Scene(),
+      camera = new THREE.PerspectiveCamera(75, innerWidth/innerHeight, .1, 1000),
+      renderer = new THREE.WebGLRenderer({canvas: document.getElementById('bg'), alpha:true});
+renderer.setSize(innerWidth, innerHeight);
+const geo = new THREE.BufferGeometry(), pos = new Float32Array(10000*3);
+for(let i=0;i<pos.length;i+=3){
+  pos[i]   = (Math.random()-.5)*3000;
+  pos[i+1] = (Math.random()-.5)*3000;
+  pos[i+2] = (Math.random()-.5)*3000;
+}
+geo.setAttribute('position', new THREE.BufferAttribute(pos,3));
+scene.add(new THREE.Points(geo, new THREE.PointsMaterial({color:0xffffff, size:.8})));
+camera.position.z = 1;
+(function render(){
+  geo.rotateY(.0003);
+  renderer.render(scene, camera);
+  requestAnimationFrame(render);
+})();
+addEventListener('resize', ()=>renderer.setSize(innerWidth, innerHeight));
+</script>
+
+<script>
+new IntersectionObserver(entries=>{
+  entries.forEach(entry=> entry.isIntersecting && entry.target.classList.add('visible'));
+},{threshold:.3}).observe(document.querySelectorAll('.card')[0].parentNode);
+// apply to all cards
+  document.querySelectorAll('.card').forEach(c=>{
+    new IntersectionObserver(e=>e.forEach(v=>v.isIntersecting&&c.classList.add('visible')),{threshold:.3}).observe(c);
+  });
+</script>
+
+<script>
+const ctxChart = document.getElementById('tokenChart');
+if (ctxChart) {
+  const ctx = ctxChart.getContext('2d');
+  const w = ctxChart.width;
+  const h = ctxChart.height;
+
+  // Draw grid
+  ctx.strokeStyle = 'rgba(0,255,255,.08)';
+  ctx.lineWidth = 1;
+  for (let x = 0; x < w; x += 40) {
+    ctx.beginPath();
+    ctx.moveTo(x, 0);
+    ctx.lineTo(x, h);
+    ctx.stroke();
+  }
+  for (let y = 0; y < h; y += 40) {
+    ctx.beginPath();
+    ctx.moveTo(0, y);
+    ctx.lineTo(w, y);
+    ctx.stroke();
+  }
+
+  // Define realistic OHLC data (normalized 0-1)
+  const candles = [
+    // Consolidation phase
+    { o: 0.45, h: 0.48, l: 0.42, c: 0.46 },
+    { o: 0.46, h: 0.47, l: 0.24, c: 0.35 },
+    { o: 0.35, h: 0.51, l: 0.33, c: 0.40 },
+    { o: 0.44, h: 0.45, l: 0.42, c: 0.43 },
+    // Breakout phase
+    { o: 0.43, h: 0.55, l: 0.42, c: 0.52 },
+    { o: 0.52, h: 0.67, l: 0.50, c: 0.63 },
+    { o: 0.68, h: 0.84, l: 0.73, c: 0.80 },
+    // Pullback phase
+    { o: 0.63, h: 0.92, l: 0.53, c: 0.77 },
+    { o: 0.70, h: 0.71, l: 0.65, c: 0.67 }
+  ];
+
+  const n = candles.length;
+  const cw = w / (n * 2); // Candle width
+
+  ctx.lineWidth = 2; // For high-low lines
+
+  for (let i = 0; i < n; i++) {
+    const candle = candles[i];
+    const x = w * (i + 0.5) / n;
+    const high_y = h - candle.h * h;
+    const low_y = h - candle.l * h;
+    const open_y = h - candle.o * h;
+    const close_y = h - candle.c * h;
+
+    // Draw high-low line
+    ctx.strokeStyle = '#00ffff'; // Cyan for high-low lines
+    ctx.beginPath();
+    ctx.moveTo(x, high_y);
+    ctx.lineTo(x, low_y);
+    ctx.stroke();
+
+    // Draw body
+    const body_top = Math.min(open_y, close_y);
+    const body_bottom = Math.max(open_y, close_y);
+    ctx.fillStyle = candle.c > candle.o ? '#00bfff' : '#000080'; // Light blue for bullish, dark blue for bearish
+    ctx.fillRect(x - cw / 2, body_top, cw, body_bottom - body_top);
+  }
+}
+</script>
+
+</body>
+</html>
